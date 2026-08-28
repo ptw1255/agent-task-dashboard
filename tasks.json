@@ -1,0 +1,58 @@
+[
+  {
+    "id": "9713db4c-b41a-4375-b258-358c9dcaf51c",
+    "title": "Analyze codebase structure",
+    "description": "Explore the project and document the main components and architecture",
+    "agent": null,
+    "status": "backlog",
+    "priority": "high",
+    "created": "2026-02-11T15:30:24.760829",
+    "updated": "2026-02-11T15:30:24.760849",
+    "githubIssue": null,
+    "tags": [
+      "exploration",
+      "documentation"
+    ]
+  },
+  {
+    "id": "3a072b43-9f4b-4cbb-96bf-9ea062f0455c",
+    "title": "Run all tests",
+    "description": "Execute the test suite and report any failures",
+    "agent": "task-agent",
+    "status": "in-progress",
+    "priority": "high",
+    "created": "2026-02-11T15:30:24.760857",
+    "updated": "2026-02-11T15:30:24.760858",
+    "githubIssue": null,
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "2ae7e941-7ec5-4b4b-9bea-1f85245e5819",
+    "title": "Review security vulnerabilities",
+    "description": "Scan for common security issues and suggest fixes",
+    "agent": null,
+    "status": "backlog",
+    "priority": "medium",
+    "created": "2026-02-11T15:30:24.760862",
+    "updated": "2026-02-11T15:30:24.760863",
+    "githubIssue": null,
+    "tags": [
+      "security",
+      "review"
+    ]
+  },
+  {
+    "id": "6818076a-7929-4712-8536-bf363d9cf087",
+    "title": "f",
+    "description": "",
+    "agent": null,
+    "status": "backlog",
+    "priority": "medium",
+    "created": "2026-02-11T16:01:07.338072",
+    "updated": "2026-02-11T16:01:07.338348",
+    "githubIssue": null,
+    "tags": []
+  }
+]
