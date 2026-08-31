@@ -137,6 +137,10 @@ Process ID: Check with `lsof -i :8809`
 
 To stop the server: Press Ctrl+C in the terminal running the server
 
+## Product portfolio
+
+See [`docs/product/README.md`](docs/product/README.md) for the product rationale, users and jobs, value proposition, pain analysis, proposed state-complete wireframes, roadmap, and measurement plan. The portfolio distinguishes implemented behavior from product inference and future hypotheses.
+
 ---
 
 **Built:** February 11, 2026
