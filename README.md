@@ -1,147 +1,133 @@
-# AI Agent Task Management Dashboard
+# <div align="center">Agent Task Dashboard</div>
 
-A full-stack web application for managing AI agent tasks with a Python backend and modern dark-themed frontend.
+<div align="center">
+  A local command center for planning, assigning, and tracking AI agent work without adding backend weight.
+</div>
 
-## 🚀 Quick Start
+<div align="center">
+  <br />
+  <img src="./assets/agent-task-dashboard-hero.png" alt="Agent Task Dashboard hero view" width="100%" />
+</div>
 
-### Start the Server
+## Why This Exists
+
+Most agent workflows break down in the same place: work is happening, but nobody has a crisp operating surface for what is queued, who is doing it, and what is blocked.
+
+Agent Task Dashboard gives you a lightweight local UI for:
+
+- seeing agent capacity in one place
+- routing work into backlog, in progress, and done states
+- filtering by priority or assigned agent
+- managing an agent workflow without standing up a database or a full SaaS stack
+
+## What You Get
+
+| Outcome | What the product does |
+| --- | --- |
+| Faster triage | Surfaces active work, backlog, and completion status at a glance |
+| Cleaner delegation | Lets you assign tasks to specific agent profiles and track ownership |
+| Low-friction setup | Runs as a single Python server with JSON storage and no external services |
+| Local control | Keeps the full workflow on your machine for fast iteration and experimentation |
+
+## Product Snapshot
+
+The dashboard is designed around one question: what should the agent system do next?
+
+1. Open the dashboard locally.
+2. Review agent availability and queue health.
+3. Create or assign work.
+4. Move tasks across the loop as execution progresses.
+
+<p align="center">
+  <img src="./assets/agent-task-dashboard-focus.png" alt="Focused view of the task board and priority filters" width="78%" />
+</p>
+
+## Core Experience
+
+### 1. Operate the queue
+
+The main board organizes work into `Backlog`, `In Progress`, and `Done`, with drag-and-drop movement between states.
+
+### 2. Route work to the right agent
+
+The sidebar gives you a quick read on agent type, availability, and task history so delegation is visible instead of implicit.
+
+### 3. Keep execution simple
+
+The app is intentionally light:
+
+- frontend: one HTML file with vanilla JavaScript and CSS
+- backend: one Python server exposing REST endpoints
+- storage: local JSON files for tasks and agents
+
+## Best Fit
+
+This repo is a strong fit if you want to:
+
+- prototype an agent operations console locally
+- manage work for multiple specialized AI agents
+- demo an agent orchestration pattern without cloud infrastructure
+- use a readable starter surface before integrating real dispatch logic
+
+## Architecture
+
+```text
+Browser UI
+  -> agent_dashboard.html
+  -> task creation, filtering, drag/drop, stats
+
+Local API
+  -> agent_task_server.py
+  -> tasks, agents, stats, dispatch actions
+
+Local State
+  -> tasks.json
+  -> agents.json
+```
+
+## Quick Start
 
 ```bash
-# Option 1: Using the start script
 ./start_dashboard.sh
+```
 
-# Option 2: Direct Python
+Then open `http://localhost:8809`.
+
+You can also start it directly:
+
+```bash
 python3 agent_task_server.py
 ```
 
-### Access the Dashboard
+## API Surface
 
-Open your browser to: **http://localhost:8809**
+| Area | Endpoints |
+| --- | --- |
+| Tasks | `GET /api/tasks`, `POST /api/tasks`, `GET /api/tasks/:id`, `PUT /api/tasks/:id`, `DELETE /api/tasks/:id` |
+| Agents | `GET /api/agents`, `POST /api/agents/:id/dispatch` |
+| Stats | `GET /api/stats` |
 
-## 📁 Project Structure
+## Current State
 
-```
-agent-task-dashboard/
-├── agent_task_server.py      # Backend REST API server
-├── agent_dashboard.html       # Frontend UI
-├── tasks.json                 # Task data storage
-├── agents.json                # Agent configuration
-├── start_dashboard.sh         # Quick launcher script
-└── README.md                  # This file
-```
+As of September 2, 2026, the repo ships with:
 
-## 🎮 Using the Dashboard
+- sample tasks preloaded for immediate testing
+- multiple specialized agent profiles
+- live stats in the top bar
+- agent and priority filtering
+- drag-and-drop workflow management
+- auto-refresh for local dashboard state
 
-### View Tasks
-- Tasks organized in 3 columns: Backlog, In Progress, Done
-- Each card shows: priority, title, description, assigned agent
+## Deeper Product Docs
 
-### Create Tasks
-1. Click **"➕ New Task"** button
-2. Fill in: title, description, priority, agent (optional)
-3. Click **"Create Task"**
-4. Task appears in Backlog column
+For the extended product rationale, wireframes, roadmap, and measurement framing, see [`docs/product/README.md`](docs/product/README.md).
 
-### Move Tasks
-- **Drag and drop** tasks between columns
-- Status updates automatically
+## Roadmap Direction
 
-### Filter Tasks
-- Click **agent cards** in sidebar to filter by agent
-- Click **priority buttons** in toolbar (All, High, Medium, Low)
-- Click same filter again to clear
+The next layer is not more UI chrome. It is deeper execution wiring:
 
-### Refresh Data
-- Click **"🔄 Refresh"** button
-- Dashboard auto-refreshes every 30 seconds
-
-## 🔧 API Endpoints
-
-### Tasks
-- `GET /api/tasks` - List all tasks
-- `POST /api/tasks` - Create new task
-- `GET /api/tasks/:id` - Get task details
-- `PUT /api/tasks/:id` - Update task
-- `DELETE /api/tasks/:id` - Delete task
-
-### Agents
-- `GET /api/agents` - List all agents
-- `POST /api/agents/:id/dispatch` - Dispatch task to agent
-
-### Stats
-- `GET /api/stats` - Get dashboard statistics
-
-## 🤖 Available Agents
-
-1. **Explore Agent** - Fast codebase exploration, pattern search, file analysis
-2. **Task Agent** - Command execution, tests, builds, linting
-3. **General Purpose Agent** - Complex multi-step tasks, full toolset access
-4. **Code Review Agent** - Code review, security analysis, bug detection
-
-## 🎯 Customization
-
-### Change Port
-Edit `PORT = 8809` in `agent_task_server.py`
-
-### Add Custom Agents
-Edit `DEFAULT_AGENTS` array in `agent_task_server.py`
-
-### Modify UI Theme
-Edit CSS variables in `agent_dashboard.html`:
-```css
-:root {
-    --bg-primary: #0a0e1a;
-    --accent-blue: #3b82f6;
-    /* ... other colors */
-}
-```
-
-## 🔨 Technologies
-
-- **Backend:** Python 3.8+ (http.server, json, uuid)
-- **Frontend:** Vanilla JavaScript (ES6+), HTML5, CSS3
-- **Storage:** JSON files
-- **Architecture:** RESTful API, Single-page application
-
-## 📊 Current Status
-
-The dashboard is running with:
-- ✅ 3 sample tasks pre-loaded
-- ✅ 4 AI agents configured
-- ✅ REST API with 10 endpoints
-- ✅ Drag-and-drop task management
-- ✅ Real-time statistics
-- ✅ Auto-refresh every 30 seconds
-
-## 🚧 Future Enhancements
-
-### Phase 2: Claude Code Integration
-- Bridge to Claude Code CLI/API
-- Actual task dispatching to real Claude agents
-- Agent response handling
-- Status update automation
-
-### Additional Features
-- GitHub Issues sync
-- Task history tracking
-- Comments and discussions
-- File attachments
-- Search functionality
-- Time tracking
-- Notifications
-
-## 📞 Support
-
-Server running on: http://localhost:8809
-Process ID: Check with `lsof -i :8809`
-
-To stop the server: Press Ctrl+C in the terminal running the server
-
-## Product portfolio
-
-See [`docs/product/README.md`](docs/product/README.md) for the product rationale, users and jobs, value proposition, pain analysis, proposed state-complete wireframes, roadmap, and measurement plan. The portfolio distinguishes implemented behavior from product inference and future hypotheses.
-
----
-
-**Built:** February 11, 2026
-**Version:** 1.0
+- real agent dispatch integrations
+- GitHub issue sync
+- comments and history
+- notifications and search
+- stronger observability for task lifecycle and throughput
