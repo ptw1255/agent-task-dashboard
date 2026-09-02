@@ -6,7 +6,7 @@
 
 <div align="center">
   <br />
-  <img src="./assets/agent-task-dashboard-hero.png" alt="Agent Task Dashboard hero view" width="100%" />
+  <img src="./assets/agent-task-dashboard-apple-ui.png" alt="Agent Task Dashboard with Apple-inspired split view" width="100%" />
 </div>
 
 ## Why This Exists
@@ -19,6 +19,8 @@ Agent Task Dashboard gives you a lightweight local UI for:
 - routing work into backlog, in progress, and done states
 - filtering by priority or assigned agent
 - managing an agent workflow without standing up a database or a full SaaS stack
+
+The current UI direction is intentionally minimalist: light surfaces, rounded split-view panels, calmer hierarchy, and a more native desktop feel.
 
 ## What You Get
 
@@ -39,7 +41,7 @@ The dashboard is designed around one question: what should the agent system do n
 4. Move tasks across the loop as execution progresses.
 
 <p align="center">
-  <img src="./assets/agent-task-dashboard-focus.png" alt="Focused view of the task board and priority filters" width="78%" />
+  <img src="./assets/agent-task-dashboard-apple-focus.png" alt="Focused view of the task board and priority controls" width="78%" />
 </p>
 
 ## Core Experience
@@ -59,6 +61,15 @@ The app is intentionally light:
 - frontend: one HTML file with vanilla JavaScript and CSS
 - backend: one Python server exposing REST endpoints
 - storage: local JSON files for tasks and agents
+
+### 4. Stay visually calm
+
+The refreshed interface is designed to feel closer to an Apple-native workspace than a conventional admin console:
+
+- split-view layout with a dedicated agent rail
+- glassy, low-noise panels
+- compact stat cards and pill filters
+- reduced chrome around the core task loop
 
 ## Best Fit
 
@@ -117,6 +128,7 @@ As of September 2, 2026, the repo ships with:
 - agent and priority filtering
 - drag-and-drop workflow management
 - auto-refresh for local dashboard state
+- refreshed Apple-inspired split-view UI
 
 ## Deeper Product Docs
 

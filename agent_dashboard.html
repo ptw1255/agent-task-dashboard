@@ -57,7 +57,7 @@
 
         /* Sidebar */
         .sidebar {
-            width: 290px;
+            width: 272px;
             background: var(--bg-shell);
             border: 1px solid var(--border);
             backdrop-filter: blur(20px);
@@ -70,29 +70,38 @@
         }
 
         .sidebar-header {
-            padding: 28px 24px 18px;
+            padding: 22px 22px 16px;
             border-bottom: 1px solid var(--border);
         }
 
+        .sidebar-kicker {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+        }
+
         .sidebar-title {
-            font-size: 28px;
-            font-weight: 650;
+            font-size: 22px;
+            font-weight: 680;
             color: var(--text-primary);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             letter-spacing: -0.03em;
         }
 
         .sidebar-subtitle {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         .agents-list {
             flex: 1;
-            padding: 12px 16px 18px;
+            padding: 10px 14px 18px;
             overflow-y: auto;
         }
 
@@ -148,7 +157,7 @@
             background: rgba(255, 255, 255, 0.84);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 12px;
+            padding: 12px 13px;
             margin-bottom: 8px;
             cursor: pointer;
             transition: all 0.2s;
@@ -176,7 +185,7 @@
             background: rgba(255, 255, 255, 0.76);
             border: 1px solid var(--border);
             color: var(--text-primary);
-            padding: 12px 14px;
+            padding: 11px 14px;
             border-radius: 16px;
             font-size: 14px;
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
@@ -192,7 +201,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .agent-status {
@@ -218,21 +227,26 @@
             flex: 1;
         }
 
+        .agent-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
         .agent-type {
             font-size: 11px;
-            padding: 4px 8px;
+            padding: 3px 8px;
             background: var(--bg-soft);
             border-radius: 999px;
-            color: var(--text-dim);
+            color: var(--text-secondary);
             font-family: ui-monospace, "SF Mono", "JetBrains Mono", monospace;
         }
 
-        .agent-stats {
-            display: flex;
-            gap: 12px;
+        .agent-completed {
             font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 8px;
+            color: var(--text-dim);
+            white-space: nowrap;
         }
 
         /* Main Area */
@@ -241,14 +255,14 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            gap: 16px;
+            gap: 14px;
         }
 
         /* Top Bar */
         .top-bar {
             background: var(--bg-shell);
             border: 1px solid var(--border);
-            padding: 28px 30px;
+            padding: 22px 24px;
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-soft);
             backdrop-filter: blur(20px);
@@ -258,42 +272,36 @@
         .top-bar-content {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            gap: 24px;
+            align-items: center;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
         .top-bar-copy {
-            max-width: 520px;
+            max-width: 420px;
         }
 
         .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 12px;
-            border-radius: 999px;
-            background: rgba(10, 132, 255, 0.08);
-            color: var(--accent-blue);
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            margin-bottom: 14px;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
         }
 
         .top-bar-title {
-            font-size: 40px;
-            line-height: 1;
+            font-size: 32px;
+            line-height: 1.02;
             letter-spacing: -0.05em;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
         }
 
         .top-bar-subtitle {
-            font-size: 16px;
+            font-size: 14px;
             color: var(--text-secondary);
-            max-width: 560px;
+            max-width: 460px;
         }
 
         .stats-summary {
@@ -306,8 +314,8 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
-            min-width: 142px;
-            padding: 18px 18px 16px;
+            min-width: 132px;
+            padding: 16px 16px 15px;
             border-radius: 22px;
             background: var(--bg-elevated);
             border: 1px solid var(--border);
@@ -336,7 +344,7 @@
 
         /* Toolbar */
         .toolbar {
-            padding: 18px 22px;
+            padding: 14px 18px;
             background: var(--bg-shell);
             border: 1px solid var(--border);
             border-radius: var(--radius-xl);
@@ -424,7 +432,7 @@
         .task-board {
             flex: 1;
             display: flex;
-            gap: 18px;
+            gap: 14px;
             padding: 0;
             overflow-x: auto;
             overflow-y: hidden;
@@ -438,7 +446,7 @@
             background: var(--bg-shell);
             border: 1px solid var(--border);
             border-radius: var(--radius-xl);
-            padding: 20px;
+            padding: 16px;
             box-shadow: var(--shadow-soft);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -453,7 +461,7 @@
         }
 
         .column-title {
-            font-size: 19px;
+            font-size: 17px;
             font-weight: 650;
             color: var(--text-primary);
             display: flex;
@@ -480,9 +488,9 @@
         .task-card {
             background: var(--bg-elevated);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 18px;
-            margin-bottom: 14px;
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 12px;
             cursor: pointer;
             transition: all 0.2s;
             box-shadow: var(--shadow-card);
@@ -525,7 +533,7 @@
         }
 
         .task-title {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 650;
             color: var(--text-primary);
             margin-bottom: 8px;
@@ -533,9 +541,9 @@
         }
 
         .task-description {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             line-height: 1.55;
         }
 
@@ -551,6 +559,10 @@
         .drop-hint {
             font-size: 12px;
             color: var(--text-dim);
+        }
+
+        .drop-hint {
+            margin: 0 2px 10px;
         }
 
         .task-agent.assigned {
@@ -667,19 +679,19 @@
             }
 
             .sidebar-title {
-                font-size: 24px;
+                font-size: 20px;
             }
 
             .top-bar {
-                padding: 22px 20px;
+                padding: 18px 18px;
             }
 
             .top-bar-title {
-                font-size: 32px;
+                font-size: 28px;
             }
 
             .top-bar-subtitle {
-                font-size: 15px;
+                font-size: 14px;
             }
 
             .toolbar {
@@ -706,13 +718,14 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
+                <div class="sidebar-kicker">Workspace</div>
                 <div class="sidebar-title">
-                    🤖 AI Agents
+                    AI Agents
                 </div>
-                <div class="sidebar-subtitle">33 specialized agents</div>
+                <div class="sidebar-subtitle">33 available specialists</div>
             </div>
             <div class="agent-search">
-                <input type="text" class="search-input" id="agentSearch" placeholder="🔍 Search agents...">
+                <input type="text" class="search-input" id="agentSearch" placeholder="Search agents">
             </div>
             <div class="agents-list" id="agentsList">
                 <!-- Agents will be rendered here -->
@@ -725,9 +738,9 @@
             <div class="top-bar">
                 <div class="top-bar-content">
                     <div class="top-bar-copy">
-                        <div class="eyebrow">Agent Operations</div>
-                        <div class="top-bar-title">Quiet control for active work.</div>
-                        <div class="top-bar-subtitle">Track what is queued, what is moving, and where agent capacity is available without the noise of a heavyweight project tool.</div>
+                        <div class="eyebrow">Overview</div>
+                        <div class="top-bar-title">Tasks</div>
+                        <div class="top-bar-subtitle">A calm split view for routing work, watching progress, and closing loops.</div>
                     </div>
                     <div class="stats-summary">
                         <div class="stat-item">
@@ -769,7 +782,7 @@
                 <div class="column">
                     <div class="column-header">
                         <div class="column-title">
-                            📋 Backlog
+                            Backlog
                             <span class="column-count" id="countBacklog">0</span>
                         </div>
                     </div>
@@ -782,7 +795,7 @@
                 <div class="column">
                     <div class="column-header">
                         <div class="column-title">
-                            ⚡ In Progress
+                            In Progress
                             <span class="column-count" id="countInProgress">0</span>
                         </div>
                     </div>
@@ -795,7 +808,7 @@
                 <div class="column">
                     <div class="column-header">
                         <div class="column-title">
-                            ✅ Done
+                            Done
                             <span class="column-count" id="countDone">0</span>
                         </div>
                     </div>
@@ -932,9 +945,9 @@
                                         <div class="agent-status ${agent.status}"></div>
                                         <div class="agent-name">${agent.name}</div>
                                     </div>
-                                    <div class="agent-type">${agent.type}</div>
-                                    <div class="agent-stats">
-                                        <span>✓ ${agent.completedTasks}</span>
+                                    <div class="agent-meta">
+                                        <div class="agent-type">${formatAgentType(agent.type)}</div>
+                                        <div class="agent-completed">${formatCompletedLabel(agent.completedTasks)}</div>
                                     </div>
                                 </div>
                             `).join('')}
@@ -944,6 +957,15 @@
             });
 
             container.innerHTML = html;
+        }
+
+        function formatAgentType(type) {
+            return (type || 'general').replace(/-/g, ' ');
+        }
+
+        function formatCompletedLabel(count) {
+            const total = Number.isFinite(count) ? count : 0;
+            return `${total} done`;
         }
 
         // Toggle category expand/collapse
